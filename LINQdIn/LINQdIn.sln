@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQdIn", "LINQdIn\LINQdIn.csproj", "{75080F74-E68E-402D-8CEC-8D73C3E766BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQdIn.Data", "LINQdIn.Data\LINQdIn.Data.csproj", "{A18AA03E-4A76-4EC0-B9DE-0ED33E12C8D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQdIn.Models", "LINQdIn.Models\LINQdIn.Models.csproj", "{4DA86FE2-119B-4B75-B10D-1ABB498CDD0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{75080F74-E68E-402D-8CEC-8D73C3E766BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75080F74-E68E-402D-8CEC-8D73C3E766BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75080F74-E68E-402D-8CEC-8D73C3E766BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A18AA03E-4A76-4EC0-B9DE-0ED33E12C8D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A18AA03E-4A76-4EC0-B9DE-0ED33E12C8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A18AA03E-4A76-4EC0-B9DE-0ED33E12C8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A18AA03E-4A76-4EC0-B9DE-0ED33E12C8D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DA86FE2-119B-4B75-B10D-1ABB498CDD0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DA86FE2-119B-4B75-B10D-1ABB498CDD0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DA86FE2-119B-4B75-B10D-1ABB498CDD0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DA86FE2-119B-4B75-B10D-1ABB498CDD0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
