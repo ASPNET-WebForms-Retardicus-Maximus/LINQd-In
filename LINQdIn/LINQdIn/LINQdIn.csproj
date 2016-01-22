@@ -163,7 +163,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account\AddPhoneNumber.aspx" />
     <Content Include="Account\Confirm.aspx" />
     <Content Include="Account\Forgot.aspx" />
     <Content Include="Account\Lockout.aspx" />
@@ -179,6 +178,10 @@
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme\materialize\css\bootstrap-material-design.css" />
+    <Content Include="Content\bootstrap-theme\materialize\css\bootstrap-material-design.min.css" />
+    <Content Include="Content\bootstrap-theme\materialize\css\ripples.css" />
+    <Content Include="Content\bootstrap-theme\materialize\css\ripples.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
@@ -188,7 +191,17 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="Content\bootstrap-theme\materialize\css\bootstrap-material-design.css.map" />
+    <Content Include="Content\bootstrap-theme\materialize\css\bootstrap-material-design.min.css.map" />
+    <Content Include="Content\bootstrap-theme\materialize\css\ripples.css.map" />
+    <Content Include="Content\bootstrap-theme\materialize\css\ripples.min.css.map" />
+    <Content Include="Scripts\bootstrap-theme\materialize\js\material.min.js.map" />
+    <Content Include="Scripts\bootstrap-theme\materialize\js\ripples.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap-theme\materialize\js\material.js" />
+    <Content Include="Scripts\bootstrap-theme\materialize\js\material.min.js" />
+    <Content Include="Scripts\bootstrap-theme\materialize\js\ripples.js" />
+    <Content Include="Scripts\bootstrap-theme\materialize\js\ripples.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -236,13 +249,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AddPhoneNumber.aspx.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Account\AddPhoneNumber.aspx.designer.cs">
-      <DependentUpon>AddPhoneNumber.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Account\Confirm.aspx.cs">
       <DependentUpon>Confirm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

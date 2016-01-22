@@ -6,12 +6,16 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <title><%: Page.Title %> - LINQdIn - The programmers' network</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/materialize"/>
+
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -35,6 +39,8 @@
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
+                <asp:ScriptReference Path="~/Scripts/bootstrap-theme/materialize/js/material.min.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap-theme/materialize/js/ripples.min.js" />
             </Scripts>
         </asp:ScriptManager>
 
@@ -81,6 +87,11 @@
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>
         </div>
+        <script>
+            $(function () {
+                $.material.init();
+            });
+        </script>
     </form>
 </body>
 </html>
