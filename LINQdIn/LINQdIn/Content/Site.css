@@ -2,6 +2,16 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #000000;
+    background-color: rgba(0, 0, 0, 0) !important;
+}
+
+html {
+    background: url("Images/bg-alt.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 /* Wrapping element */
@@ -32,6 +42,7 @@ input[type="select"] {
     .jumbotron {
         margin-top: 20px;
     }
+
     .body-content {
         padding: 0;
     }

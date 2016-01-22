@@ -27,6 +27,8 @@
 
         public string Portfolio { get; set; }
 
+        public string ProfilePhotoUrl { get; set; }
+
         public DateTime RegisteredOn { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
