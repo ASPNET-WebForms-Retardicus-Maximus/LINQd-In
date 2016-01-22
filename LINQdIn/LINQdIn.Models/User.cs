@@ -21,6 +21,12 @@
         [MaxLength(1000)]
         public string Summary { get; set; }
 
+        public string TwitterProfile { get; set; }
+
+        public string GithubProfile { get; set; }
+
+        public string Portfolio { get; set; }
+
         public DateTime RegisteredOn { get; set; }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)

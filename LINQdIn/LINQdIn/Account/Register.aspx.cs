@@ -1,15 +1,13 @@
-﻿using System;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Owin;
-using LINQdIn.Models;
-
-namespace LINQdIn.Account
+﻿namespace LINQdIn.Account
 {
+    using System;
+    using System.Linq;
+    using System.Web;
+    using System.Web.UI;
+    using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
+    using Microsoft.AspNet.Identity.Owin;
+    using Models;
 
     public partial class Register : Page
     {
