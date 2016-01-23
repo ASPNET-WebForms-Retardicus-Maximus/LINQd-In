@@ -52,7 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Education.cs" />
+    <Compile Include="Endorsement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Skill.cs" />
+    <Compile Include="Update.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
