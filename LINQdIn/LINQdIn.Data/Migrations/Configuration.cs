@@ -1,6 +1,7 @@
 namespace LINQdIn.Data.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity.Migrations;
     using System.Linq;
     using Microsoft.AspNet.Identity;
@@ -49,6 +50,58 @@ namespace LINQdIn.Data.Migrations
             if (adminUser != null)
             {
                 userManager.AddToRoles(adminUser.Id, "Regular", "Admin", "Employer");
+            }
+
+            if(!context.Skills.Any())
+            {
+                var seedSkills = new List<string>()
+                {
+                    "C#",
+                    ".NET",
+                    "LINQ",
+                    "Underscore.js",
+                    "ASP DO(N)T NET",
+                    "OOP",
+                    "OOD",
+                    "NoSQL databases",
+                    "Design Patterns",
+                    "Entity Framework",
+                    "MVC",
+                    "Git",
+                    "TDD",
+                    "BDD",
+                    "SPA Applicaitons",
+                    "Management",
+                    "MEAN Stack",
+                    "Angular",
+                    "NodeJS",
+                    "Python",
+                    "Ruby",
+                    "Ruby on rails",
+                    "jQuery",
+                    "Javascript",
+                    "Trumpscript",
+                    "Handlebars",
+                    "View engines",
+                    "Game engines",
+                    "SQL",
+                    "MS SQL Server",
+                    "QA",
+                    "Web Api",
+                    "RESTful Services",
+                    "Brainfuck"
+                };
+
+                foreach (var skillName in seedSkills)
+                {
+                    context.Skills.Add(new Skill() { Name = skillName });
+                }
+
+                context.SaveChanges();
+
+                context.Skills.Take(5).ToList().ForEach(x => adminUser.Skills.Add(x));
+
+                context.SaveChanges();
             }
         }
     }

@@ -18,7 +18,9 @@
 
         public IDbSet<Endorsement> Endorsements { get; set; }
 
-        public IDbSet<Update> Updates { get; set; } 
+        public IDbSet<Update> Updates { get; set; }
+        
+        public IDbSet<Connection> Connections { get; set; } 
 
         public static ApplicationDbContext Create()
         {

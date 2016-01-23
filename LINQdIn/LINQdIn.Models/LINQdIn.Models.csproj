@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connection.cs" />
     <Compile Include="Education.cs" />
     <Compile Include="Endorsement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

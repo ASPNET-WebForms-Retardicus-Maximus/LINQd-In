@@ -13,16 +13,16 @@
     public class User : IdentityUser
     {
         private ICollection<Skill> skills;
+        private ICollection<Endorsement> endorsements;
         private ICollection<Education> education;
         private ICollection<Update> updates;
-        private ICollection<User> connections;
 
         public User()
         {
             this.skills = new HashSet<Skill>();  
             this.education = new HashSet<Education>();
             this.updates = new HashSet<Update>();
-            this.connections = new HashSet<User>();
+            this.endorsements = new HashSet<Endorsement>();
         }
 
         [Required]
@@ -48,11 +48,11 @@
 
         public virtual ICollection<Skill> Skills { get { return this.skills; } set { this.skills = value; } }
 
+        public virtual ICollection<Endorsement> Endorsements { get { return this.endorsements; } set { this.endorsements = value; } }
+
         public virtual ICollection<Education> Education { get { return this.education; } set { this.education = value; } }
 
         public virtual ICollection<Update> Update { get { return this.updates; } set { this.updates = value; } }
-
-        public virtual ICollection<User> Connections { get { return this.connections; } set { this.connections = value; } }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {

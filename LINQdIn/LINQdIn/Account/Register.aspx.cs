@@ -15,7 +15,7 @@
         {
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new User() { UserName = Email.Text, Email = Email.Text, FirstName = FirstName.Text, LastName = LastName.Text };
+            var user = new User() { UserName = Email.Text, Email = Email.Text, FirstName = FirstName.Text, LastName = LastName.Text, RegisteredOn = DateTime.UtcNow };
             var isEmployer = Employer.Checked;
 
             IdentityResult result = manager.Create(user, Password.Text);

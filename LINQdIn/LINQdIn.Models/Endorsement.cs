@@ -10,8 +10,11 @@
         public string UserId { get; set; }
 
         [ForeignKey("UserId")]
-        public virtual User User { get; set; }
+        public virtual User EndorsedBy { get; set; }
 
-        public string EndorsedBy { get; set; }
+        public int SkillId { get; set; }
+
+        [ForeignKey("SkillId")]
+        public virtual Skill Skill { get; set; }
     }
 }
