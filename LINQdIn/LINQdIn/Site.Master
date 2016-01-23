@@ -77,7 +77,7 @@
                 </div>
             </div>
         </div>
-        <div class="container body-content">
+        <div class="container container-fluid panel body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
