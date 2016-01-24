@@ -1,5 +1,6 @@
 ﻿namespace LINQdIn.Services
 {
+    using System;
     using System.Linq;
     using Data.Repository;
     using Microsoft.AspNet.Identity;
@@ -25,6 +26,15 @@
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
             var role = roleManager.FindByName("Employer");
             var result = this.users.All().Where(x => x.Roles.Any(r => r.RoleId == role.Id));
+
+            return result;
+        }
+
+        public IQueryable<User> GetAllNonAdmin()
+        {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+            var role = roleManager.FindByName("Admin");
+            var result = this.users.All().Where(x => x.Roles.All(r => r.RoleId != role.Id));
 
             return result;
         }

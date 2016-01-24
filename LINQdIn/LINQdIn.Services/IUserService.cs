@@ -9,6 +9,8 @@
     {
         IQueryable<User> GetAll();
 
+        IQueryable<User> GetAllNonAdmin();
+
         IQueryable<User> GetAllEmployers();
 
         IQueryable<User> GetAllNonEmployers();
