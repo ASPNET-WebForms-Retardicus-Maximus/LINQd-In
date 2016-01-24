@@ -22,12 +22,30 @@ namespace LINQdIn {
         protected global::System.Web.UI.WebControls.GridView GridViewUsers;
         
         /// <summary>
-        /// LabelSelectedItem control.
+        /// btnPrevious control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelSelectedItem;
+        protected global::System.Web.UI.WebControls.Button btnPrevious;
+        
+        /// <summary>
+        /// lblCurrentPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCurrentPage;
+        
+        /// <summary>
+        /// btnNext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnNext;
     }
 }

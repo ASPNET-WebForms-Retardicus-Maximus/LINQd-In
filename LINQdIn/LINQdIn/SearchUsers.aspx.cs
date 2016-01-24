@@ -19,14 +19,31 @@ namespace LINQdIn
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
-            this.GridViewUsers.DataSource = UserService.GetAllNonAdmin()
+            if (!IsPostBack)
+            {
+                this.BindData(0);
+            }
+        }
+
+        protected void BindData(int page)
+        {
+            this.GridViewUsers.DataSource = UserService.GetAll().OrderBy(x => x.FirstName + x.LastName).Skip(page * 10).Take(10)
                                                 .ToList().Select(x => new
                                                 {
-                                                    ID= x.Id,
+                                                    ID = x.Id,
                                                     Name = x.FirstName + " " + x.LastName,
                                                     Skills = string.Join(", ", x.Skills.Select(y => y.Name))
                                                 }).ToList();
+
+            this.btnPrevious.Enabled = page > 0;
+
+            this.lblCurrentPage.Text = page.ToString();
             this.GridViewUsers.DataBind();
+        }
+
+        protected void ChangePage(object sender, CommandEventArgs e)
+        {
+            this.BindData(int.Parse(this.lblCurrentPage.Text) + int.Parse((string)e.CommandArgument));
         }
 
         protected void GridViewUsers_PageIndexChanging(object sender, GridViewPageEventArgs e)
