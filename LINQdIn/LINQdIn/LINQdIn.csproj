@@ -193,6 +193,7 @@
     <Content Include="Content\bootstrap-theme\materialize\css\bootstrap-material-design.min.css.map" />
     <Content Include="Content\bootstrap-theme\materialize\css\ripples.css.map" />
     <Content Include="Content\bootstrap-theme\materialize\css\ripples.min.css.map" />
+    <Content Include="Profile\EditProfile.aspx" />
     <Content Include="Profile\Private.aspx" />
     <Content Include="Profile\Public.aspx" />
     <Content Include="Scripts\bootstrap-theme\materialize\js\material.min.js.map" />
@@ -236,6 +237,7 @@
     <Content Include="Global.asax" />
     <Content Include="SearchUsers.aspx" />
     <Content Include="Site.Master" />
+    <Content Include="UploadedFiles\ProfileImages\avatar-placeholder.jpg" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -345,6 +347,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\IdentityHelper.cs" />
+    <Compile Include="Profile\EditProfile.aspx.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\EditProfile.aspx.designer.cs">
+      <DependentUpon>EditProfile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Profile\Private.aspx.cs">
       <DependentUpon>Private.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -39,6 +39,7 @@ namespace LINQdIn.Data.Migrations
                     EmailConfirmed = true,
                     FirstName = "Admin",
                     LastName = "Admin",
+                    ProfilePhotoUrl = "~/UploadedFiles/ProfileImages/avatar-placeholder.jpg",
                     RegisteredOn = DateTime.Now.AddYears(-1),
                 };
 

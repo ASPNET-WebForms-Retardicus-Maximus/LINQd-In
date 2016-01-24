@@ -6,7 +6,7 @@
             <h2><%# DbUser.FirstName %> <%# DbUser.LastName %></h2>
         </div>
         <div class="text-center" style="padding-top: 10px">
-            <img src="<%# DbUser.ProfilePhotoUrl %>" alt="<%# DbUser.FirstName %>" width="300" height="300" runat="server" />
+            <img src="<%# DbUser.ProfilePhotoUrl %>" alt="<%# DbUser.FirstName %>" width="300" height="300" runat="server" style="-ms-border-radius: 300px; border-radius: 300px"/>
         </div>
         <hr />
         <div class="text-center">

@@ -59,21 +59,54 @@
                         <li><a runat="server" href="~/">Home</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <RoleGroups>
+                            <asp:RoleGroup Roles="Admin">
+                                <ContentTemplate>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li>
+                                            <a runat="server" href="~/Admin/Manage">Admin Stuff</a>
+                                        </li>
+                                        <li class="dropdown">
+                                            <a href="/#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>&nbsp;<%: Context.User.Identity.Name  %> <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a runat="server" href="~/Profile/Private" title="View Profile"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Profile</a></li>
+                                                <li><a runat="server" href="~/Account/Manage" title="Manage your account"><span class="glyphicon glyphicon-cog"></span>&nbsp;Manage</a></li>
+                                                <li class="divider">
+                                                    <li>
+                                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText='<span class="glyphicon glyphicon-log-out"></span> Log off' LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                                    </li>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                            <asp:RoleGroup Roles="Regular, Employer">
+                                <ContentTemplate>
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="dropdown">
+                                            <a href="/#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>&nbsp;<%: Context.User.Identity.Name  %> <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a runat="server" href="~/Profile/Private" title="View Profile"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Profile</a></li>
+                                                <li><a runat="server" href="~/Account/Manage" title="Manage your account"><span class="glyphicon glyphicon-cog"></span>&nbsp;Manage</a></li>
+                                                <li class="divider">
+                                                    <li>
+                                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText='<span class="glyphicon glyphicon-log-out"></span> Log off' LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                                    </li>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </ContentTemplate>
+                            </asp:RoleGroup>
+                        </RoleGroups>
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/Account/Register"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Register</a></li>
+                                <li><a runat="server" href="~/Account/Login"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
-                        <LoggedInTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account"><span class="glyphicon glyphicon-user"></span><%: Context.User.Identity.Name  %></a></li>
-                                <li><a runat="server" href="~/Profile/Private" title="View Profile"><span class="glyphicon glyphicon-pencil"></span>View Profile</a></li>
-                                <li>
-                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
-                                </li>
-                            </ul>
-                        </LoggedInTemplate>
+
                     </asp:LoginView>
                 </div>
             </div>
@@ -81,12 +114,12 @@
         <div class="container container-fluid panel body-content" style="padding: 20px !important">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <div class="text-center">
-                <hr />
-                <footer class="text-center">
-                    <p>&copy; LINQdIn - Connecting Programmers</p>
-                </footer>
-            </div>
+        </div>
+        <div class="text-center">
+            <hr />
+            <footer class="text-center">
+                <p class="text-primary">&copy; LINQdIn - Connecting Programmers</p>
+            </footer>
         </div>
         <script>
             $(function () {

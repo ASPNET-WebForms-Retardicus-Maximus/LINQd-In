@@ -11,7 +11,7 @@
             <asp:BoundField DataField="Name" HeaderText="Name" />
             <asp:BoundField DataField="Skills" HeaderText="Skills" />
             <asp:HyperLinkField Text="Details" DataNavigateUrlFields="Id" ControlStyle-CssClass="btn btn-sm btn-raised btn-primary"
-                DataNavigateUrlFormatString="PlaceholderReplaceWithUserDetailsPageLazySlave.aspx?id={0}" />
+                DataNavigateUrlFormatString='~/Profile/Public?userId={0}' />
         </Columns>
     </asp:GridView>
     <asp:Button ID="btnPrevious" Text="<" runat="server" CommandArgument="-1" OnCommand="ChangePage" CssClass="btn btn-md btn-success" />
