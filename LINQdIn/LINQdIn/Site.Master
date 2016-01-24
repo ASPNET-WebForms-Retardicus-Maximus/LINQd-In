@@ -14,7 +14,7 @@
     </asp:PlaceHolder>
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-    <webopt:BundleReference runat="server" Path="~/Content/materialize"/>
+    <webopt:BundleReference runat="server" Path="~/Content/materialize" />
 
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -67,7 +67,8 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account"><span class="glyphicon glyphicon-user"></span> <%: Context.User.Identity.Name  %></a></li>
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account"><span class="glyphicon glyphicon-user"></span><%: Context.User.Identity.Name  %></a></li>
+                                <li><a runat="server" href="~/Profile/Private" title="View Profile"><span class="glyphicon glyphicon-pencil"></span>View Profile</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -77,13 +78,15 @@
                 </div>
             </div>
         </div>
-        <div class="container container-fluid panel body-content">
+        <div class="container container-fluid panel body-content" style="padding: 20px !important">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; LINQdIn - Connecting Programmers</p>
-            </footer>
+            <div class="text-center">
+                <hr />
+                <footer class="text-center">
+                    <p>&copy; LINQdIn - Connecting Programmers</p>
+                </footer>
+            </div>
         </div>
         <script>
             $(function () {

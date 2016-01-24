@@ -10,9 +10,6 @@
 
     public partial class Manage : System.Web.UI.Page
     {
-        [Inject]
-        public IUserService UserService { get; set; }
-
         protected string SuccessMessage
         {
             get;
@@ -34,8 +31,6 @@
 
         protected void Page_Load()
         {
-            var emp = UserService.GetAllEmployers();
-
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
 
             HasPhoneNumber = String.IsNullOrEmpty(manager.GetPhoneNumber(User.Identity.GetUserId()));
