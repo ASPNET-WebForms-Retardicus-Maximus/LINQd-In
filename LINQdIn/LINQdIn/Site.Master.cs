@@ -9,11 +9,17 @@ using System.Web.UI.WebControls;
 
 namespace LINQdIn
 {
+    using Ninject;
+    using Services;
+
     public partial class SiteMaster : MasterPage
     {
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
+
+        [Inject]
+        public IUserService UserService { get; set; }
 
         protected void Page_Init(object sender, EventArgs e)
         {

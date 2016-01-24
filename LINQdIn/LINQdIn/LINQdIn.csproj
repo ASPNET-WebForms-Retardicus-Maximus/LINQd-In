@@ -393,6 +393,10 @@
       <Project>{4da86fe2-119b-4b75-b10d-1abb498cdd0e}</Project>
       <Name>LINQdIn.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LINQdIn.Services\LINQdIn.Services.csproj">
+      <Project>{f13e6765-7670-46bb-ae4e-56864c4e549b}</Project>
+      <Name>LINQdIn.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

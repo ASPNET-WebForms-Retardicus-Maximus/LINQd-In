@@ -11,6 +11,7 @@ namespace LINQdIn.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Services;
 
     public static class NinjectWebCommon 
     {
@@ -65,6 +66,8 @@ namespace LINQdIn.App_Start
             kernel.Bind<IApplicationDbContext>().To<ApplicationDbContext>();
 
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
+
+            kernel.Bind(typeof (IUserService)).To(typeof (UserService));
         }        
     }
 }
