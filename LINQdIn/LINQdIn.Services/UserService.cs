@@ -52,5 +52,17 @@
         {
             return this.users.All().FirstOrDefault(x => x.Id == id);
         }
+
+
+        public void ChangeProfilePhotoUrl(string id, string url)
+        {
+            var user = this.GetById(id);
+
+            user.ProfilePhotoUrl = url;
+
+            this.users.Update(user);
+
+            this.users.SaveChanges();
+        }
     }
 }

@@ -16,5 +16,7 @@
         IQueryable<User> GetAllNonEmployers();
 
         User GetById(string id);
+
+        void ChangeProfilePhotoUrl(string id, string url);
     }
 }
