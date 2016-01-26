@@ -20,12 +20,12 @@
                     <asp:DynamicControl Mode="Edit" DataField="GithubProfile" runat="server" />
                     <asp:DynamicControl Mode="Edit" DataField="Portfolio" runat="server" />
 
+
                     <div class="has-success form-group">
-                        <label class="col-lg-4 col-md-4 control-label"><span class="glyphicon glyphicon-pencil"></span>Change profile photo:</label>
+                        <label class="col-lg-4 col-md-4 control-label">Change profile photo:</label>
                         <div>
                             <asp:FileUpload ID="ImageFileUpload" runat="server" />
                         </div>
-
                         <asp:Button runat="server" ID="UploadButton" Text="Upload" OnClick="UploadButton_Click" />
 
                         <asp:Label runat="server" ID="StatusLabel" Text="Upload status: " />
@@ -38,6 +38,7 @@
                         </div>
                     </div>
                 </fieldset>
+
             </EditItemTemplate>
         </asp:FormView>
     </div>
