@@ -2,8 +2,7 @@
 {
     using System;
     using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.Owin;
-    using DbUser = Models.User;
+    using Models;
     using Ninject;
     using Services;
 
@@ -12,7 +11,7 @@
         [Inject]
         public IUserService UserService { get; set; }
 
-        protected new DbUser DbUser { get; set; }
+        protected new User DbUser { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {

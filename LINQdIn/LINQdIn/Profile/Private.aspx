@@ -3,10 +3,10 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h2><%# DbUser.FirstName %> <%# DbUser.LastName %></h2>
+            <h2><%# DbUser.FirstName %> <%# DbUser.LastName %> &nbsp;&nbsp;&nbsp; <a href="/Profile/EditProfile" class="btn btn-sm btn-raised btn-info">Edit</a></h2>
         </div>
         <div class="text-center" style="padding-top: 10px">
-            <img src="<%# DbUser.ProfilePhotoUrl %>" alt="<%# DbUser.FirstName %>" width="300" height="300" runat="server" style="-ms-border-radius: 300px; border-radius: 300px"/>
+            <img src="<%# DbUser.ProfilePhotoUrl %>" alt="<%# DbUser.FirstName %>" width="300" height="300" runat="server" style="-ms-border-radius: 300px; border-radius: 300px" />
         </div>
         <hr />
         <div class="text-center">
@@ -34,7 +34,6 @@
                 </div>
             </div>
             <div class="form-group">
-                
             </div>
         </div>
     </div>

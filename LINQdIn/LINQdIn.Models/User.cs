@@ -52,7 +52,7 @@
 
         public virtual ICollection<Education> Education { get { return this.education; } set { this.education = value; } }
 
-        public virtual ICollection<Update> Update { get { return this.updates; } set { this.updates = value; } }
+        public virtual ICollection<Update> Updates { get { return this.updates; } set { this.updates = value; } }
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<User> manager)
         {
