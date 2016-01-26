@@ -176,6 +176,8 @@
     <Content Include="Account\RegisterExternalLogin.aspx" />
     <Content Include="Account\ResetPassword.aspx" />
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
+    <Content Include="Admin\Skills.aspx" />
+    <Content Include="Admin\Users.aspx" />
     <Content Include="Content\bootstrap-theme\materialize\css\bootstrap-material-design.css" />
     <Content Include="Content\bootstrap-theme\materialize\css\bootstrap-material-design.min.css" />
     <Content Include="Content\bootstrap-theme\materialize\css\ripples.css" />
@@ -219,6 +221,7 @@
     <Content Include="Profile\Public.aspx" />
     <Content Include="Scripts\bootstrap-theme\materialize\js\material.min.js.map" />
     <Content Include="Scripts\bootstrap-theme\materialize\js\ripples.min.js.map" />
+    <Content Include="Admin\Default.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap-theme\materialize\js\material.js" />
     <Content Include="Scripts\bootstrap-theme\materialize\js\material.min.js" />
@@ -547,7 +550,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\" />
     <Folder Include="App_Data\" />
     <Folder Include="CustomControls\" />
     <Folder Include="Models\" />
