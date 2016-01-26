@@ -17,6 +17,7 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.StatusLabel.Visible = false;
         }
 
         // This is the Update method to update the selected User item
@@ -60,6 +61,8 @@
 
         protected void UploadButton_Click(object sender, EventArgs e)
         {
+            this.StatusLabel.Visible = true;
+
             if (ImageFileUpload.HasFile)
             {
                 try
@@ -82,19 +85,21 @@
 
                             ImageFileUpload.SaveAs(path);
                             UserService.ChangeProfilePhotoUrl(id, url);
-                            StatusLabel.Text = "Upload status: File uploaded!";
-
-                            Response.Redirect("~/Profile/EditProfile");
+                            this.StatusLabel.Text = "Upload status: File uploaded!";
                         }
                         else
-                            StatusLabel.Text = "Upload status: The file has to be less than 16 mb!";
+                        {
+                            this.StatusLabel.Text = "Upload status: The file has to be less than 16 mb!";
+                        }
                     }
                     else
-                        StatusLabel.Text = "Upload status: Only JPEG files are accepted!";
+                    {
+                        this.StatusLabel.Text = "Upload status: Only JPEG files are accepted!";
+                    }
                 }
                 catch (Exception ex)
                 {
-                    StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                    this.StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
                 }
             }
         }
