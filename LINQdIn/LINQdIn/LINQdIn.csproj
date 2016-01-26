@@ -213,6 +213,7 @@
     <Content Include="Content\bootstrap-theme\materialize\css\bootstrap-material-design.min.css.map" />
     <Content Include="Content\bootstrap-theme\materialize\css\ripples.css.map" />
     <Content Include="Content\bootstrap-theme\materialize\css\ripples.min.css.map" />
+    <Content Include="Profile\Connections.aspx" />
     <Content Include="Profile\EditProfile.aspx" />
     <Content Include="Profile\Private.aspx" />
     <Content Include="Profile\Public.aspx" />

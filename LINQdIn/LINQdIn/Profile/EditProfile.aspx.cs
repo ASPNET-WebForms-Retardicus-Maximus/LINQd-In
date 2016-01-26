@@ -28,8 +28,6 @@
 
             if (user == null)
             {
-                // The user wasn't found
-                ModelState.AddModelError("", String.Format("User with id {0} was not found", userId));
                 return;
             }
 
@@ -86,7 +84,7 @@
                             UserService.ChangeProfilePhotoUrl(id, url);
                             StatusLabel.Text = "Upload status: File uploaded!";
 
-                            Response.Redirect("~/Profile/Private");
+                            Response.Redirect("~/Profile/EditProfile");
                         }
                         else
                             StatusLabel.Text = "Upload status: The file has to be less than 16 mb!";

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../Site.Master" CodeBehind="Private.aspx.cs" Inherits="LINQdIn.Profile.Private" %>
+﻿<%@ Page Language="C#"  Title="Profile" AutoEventWireup="true" MasterPageFile="../Site.Master" CodeBehind="Private.aspx.cs" Inherits="LINQdIn.Profile.Private" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="panel panel-primary">

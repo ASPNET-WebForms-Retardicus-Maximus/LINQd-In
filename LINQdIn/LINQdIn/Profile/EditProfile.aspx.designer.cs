@@ -8,10 +8,11 @@
 //------------------------------------------------------------------------------
 
 namespace LINQdIn.Profile {
-    
-    
-    public partial class EditProfile {
-        
+
+
+    public partial class EditProfile
+    {
+
         /// <summary>
         /// ImageFileUpload control.
         /// </summary>
@@ -20,7 +21,7 @@ namespace LINQdIn.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload ImageFileUpload;
-        
+
         /// <summary>
         /// UploadButton control.
         /// </summary>
@@ -29,7 +30,7 @@ namespace LINQdIn.Profile {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button UploadButton;
-        
+
         /// <summary>
         /// StatusLabel control.
         /// </summary>

@@ -72,7 +72,9 @@
 
             if (success)
             {
-                Server.Transfer(Request.RawUrl);
+                var url = Request.Url.PathAndQuery;
+
+                Server.TransferRequest(url);
             }
         }
     }

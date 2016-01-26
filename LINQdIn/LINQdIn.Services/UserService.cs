@@ -55,18 +55,6 @@
             return this.users.All().FirstOrDefault(x => x.Id == id);
         }
 
-
-        public void ChangeProfilePhotoUrl(string id, string url)
-        {
-            var user = this.GetById(id);
-
-            user.ProfilePhotoUrl = url;
-
-            this.users.Update(user);
-
-            this.users.SaveChanges();
-        }
-
         public void Update(User user)
         {
             this.users.Update(user);
@@ -80,9 +68,14 @@
 
             var skill = endorsedUser.Skills.FirstOrDefault(x => x.Id == skillId);
 
-            var endorsement = new Endorsement { SkillId = skillId, EndorsedBy = endorsedBy };
+            var endorsement = new Endorsement {SkillId = skillId, EndorsedBy = endorsedBy};
 
-            endorsedUser.Updates.Add(new Update { Content = string.Format("{0} {1} endorsed {2} {3} for their {4} skill.", endorsedBy.FirstName, endorsedBy.LastName, endorsedUser.FirstName, endorsedUser.LastName, skill.Name) });
+            endorsedUser.Updates.Add(new Update
+            {
+                Content =
+                    string.Format("{0} {1} endorsed {2} {3} for their {4} skill.", endorsedBy.FirstName,
+                        endorsedBy.LastName, endorsedUser.FirstName, endorsedUser.LastName, skill.Name)
+            });
 
             endorsedUser.Endorsements.Add(endorsement);
 
@@ -90,6 +83,17 @@
             this.users.SaveChanges();
 
             return true;
+        }
+
+        public void ChangeProfilePhotoUrl(string id, string url)
+        {
+            var user = this.GetById(id);
+
+            user.ProfilePhotoUrl = url;
+
+            this.users.Update(user);
+
+            this.users.SaveChanges();
         }
     }
 }
