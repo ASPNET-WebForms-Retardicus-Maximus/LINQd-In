@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQdIn.Models", "LINQdIn.M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQdIn.Services", "LINQdIn.Services\LINQdIn.Services.csproj", "{F13E6765-7670-46BB-AE4E-56864C4E549B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQdIn.ViewModels", "LINQdIn.ViewModels\LINQdIn.ViewModels.csproj", "{DE7CE07A-4DFC-4150-BD84-3CF70DD2B689}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F13E6765-7670-46BB-AE4E-56864C4E549B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F13E6765-7670-46BB-AE4E-56864C4E549B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F13E6765-7670-46BB-AE4E-56864C4E549B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE7CE07A-4DFC-4150-BD84-3CF70DD2B689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE7CE07A-4DFC-4150-BD84-3CF70DD2B689}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE7CE07A-4DFC-4150-BD84-3CF70DD2B689}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE7CE07A-4DFC-4150-BD84-3CF70DD2B689}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
