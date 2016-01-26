@@ -6,15 +6,56 @@
     using Ninject;
     using System;
     using System.IO;
+    using System.Web.UI;
+    using System.Web.UI.WebControls;
+    using Models;
 
-    public partial class EditProfile : System.Web.UI.Page
+    public partial class EditProfile : Page
     {
         [Inject]
         public IUserService UserService { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
+        }
 
+        // This is the Update method to update the selected User item
+        // USAGE: <asp:FormView UpdateMethod="UpdateItem">
+        public void UpdateItem()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = UserService.GetById(userId);
+
+            if (user == null)
+            {
+                return;
+            }
+
+            TryUpdateModel(user);
+
+            if (ModelState.IsValid)
+            {
+                UserService.Update(user);
+                Response.Redirect("~/Profile/Private");
+            }
+        }
+
+        // This is the Select method to selects a single User item with the id
+        // USAGE: <asp:FormView SelectMethod="GetItem">
+        public User GetItem()
+        {
+            var userId = User.Identity.GetUserId();
+            var user = UserService.GetById(userId);
+
+            return user;
+        }
+
+        protected void ItemCommand(object sender, FormViewCommandEventArgs e)
+        {
+            if (e.CommandName.Equals("Cancel", StringComparison.OrdinalIgnoreCase))
+            {
+                Response.Redirect("~/Profile/Private");
+            }
         }
 
         protected void UploadButton_Click(object sender, EventArgs e)
@@ -43,7 +84,7 @@
                             UserService.ChangeProfilePhotoUrl(id, url);
                             StatusLabel.Text = "Upload status: File uploaded!";
 
-                            Response.Redirect("~/Profile/Private");
+                            Response.Redirect("~/Profile/EditProfile");
                         }
                         else
                             StatusLabel.Text = "Upload status: The file has to be less than 16 mb!";

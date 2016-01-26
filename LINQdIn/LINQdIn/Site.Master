@@ -56,8 +56,8 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/"> <span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
-                        <li><a runat="server" href="~/searchusers"> <span class="glyphicon glyphicon-list-alt"></span>&nbsp;Users</a></li>
+                        <li><a runat="server" href="~/"><span class="glyphicon glyphicon-home"></span>&nbsp;Home</a></li>
+                        <li><a runat="server" href="~/searchUsers"><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Users</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <RoleGroups>
@@ -65,12 +65,13 @@
                                 <ContentTemplate>
                                     <ul class="nav navbar-nav navbar-right">
                                         <li>
-                                            <a runat="server" href="~/Admin/Manage"> <span class="glyphicon glyphicon-wrench"></span>&nbsp;Admin Stuff</a>
+                                            <a runat="server" href="~/Admin/Manage"><span class="glyphicon glyphicon-wrench"></span>&nbsp;Admin Stuff</a>
                                         </li>
                                         <li class="dropdown">
                                             <a href="/#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>&nbsp;<%: Context.User.Identity.Name  %> <b class="caret"></b></a>
                                             <ul class="dropdown-menu">
                                                 <li><a runat="server" href="~/Profile/Private" title="View Profile"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Profile</a></li>
+                                                <li><a runat="server" href="~/Profile/Connections" title="Connections"><span class="glyphicon glyphicon-link"></span>&nbsp;Connections</a></li>
                                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account"><span class="glyphicon glyphicon-cog"></span>&nbsp;Manage</a></li>
                                                 <li class="divider">
                                                     <li>
@@ -89,6 +90,7 @@
                                             <a href="/#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>&nbsp;<%: Context.User.Identity.Name  %> <b class="caret"></b></a>
                                             <ul class="dropdown-menu">
                                                 <li><a runat="server" href="~/Profile/Private" title="View Profile"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Profile</a></li>
+                                                <li><a runat="server" href="~/Profile/Connections" title="Connections"><span class="glyphicon glyphicon-link"></span>&nbsp;Connections</a></li>
                                                 <li><a runat="server" href="~/Account/Manage" title="Manage your account"><span class="glyphicon glyphicon-cog"></span>&nbsp;Manage</a></li>
                                                 <li class="divider">
                                                     <li>

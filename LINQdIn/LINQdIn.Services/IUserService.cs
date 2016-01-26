@@ -1,8 +1,6 @@
 ﻿namespace LINQdIn.Services
 {
     using System.Linq;
-    using Microsoft.AspNet.Identity;
-    using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
     public interface IUserService
@@ -16,6 +14,10 @@
         IQueryable<User> GetAllNonEmployers();
 
         User GetById(string id);
+
+        void Update(User user);
+
+        bool EndorseUser(string endorsedUserId, string endorsedById, int skillId);
 
         void ChangeProfilePhotoUrl(string id, string url);
     }

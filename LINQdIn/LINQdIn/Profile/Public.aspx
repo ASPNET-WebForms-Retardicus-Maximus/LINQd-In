@@ -12,7 +12,8 @@
                 </div>
                 <div class="text-center">
                     <div class="btn-group-sm">
-                        <a><i class=""></i></a>
+                        <a href="<%# Item.TwitterProfile %>" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-link">&nbsp;</i>Twitter</a>
+                        <a href="<%# Item.GithubProfile %>" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-link">&nbsp;</i>Github</a>
                     </div>
                 </div>
                 <hr />
@@ -41,7 +42,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        Portfolio: <a href="<%# Item.Portfolio %>"><%# Item.Portfolio %></a>
+                        Portfolio: <a href="/<%# Item.Portfolio %>"><%# Item.Portfolio %></a>
                     </div>
                     <div class="form-group">
                         Skills: 
@@ -53,7 +54,7 @@
                                     <tr>
                                         <td><%# Item.Name %></td>
                                         <td>
-                                            <a href="/#" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-check"></span>&nbsp;Endorse!</a>
+                                                <asp:Button runat="server" OnCommand="OnCommand" CommandArgument="<%# Item.Id %>" Text='Endorse!' CssClass="btn btn-sm btn-primary"/>
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -76,7 +77,8 @@
                                         <tr>
                                             <td><%# Item.Skill.Name %></td>
                                             <td>
-                                                <a href="/Profile/Public?userId=<%# Item.UserId %>" class="btn btn-sm">&nbsp;<%# string.Format("{0} {1}", Item.EndorsedBy.FirstName, Item.EndorsedBy.LastName) %></a>
+                                                <p>by 
+                                                <a href="/Profile/Public?userId=<%# Item.EndorsedById %>" class="btn btn-sm btn-default">&nbsp;<%# string.Format("{0} {1}", Item.EndorsedBy.FirstName, Item.EndorsedBy.LastName) %></a></p>
                                             </td>
                                         </tr>
                                     </ItemTemplate>

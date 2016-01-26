@@ -10,10 +10,12 @@
     public class UserService : IUserService
     {
         private readonly IRepository<User> users;
+        private readonly IRepository<Endorsement> endorsements;
 
-        public UserService(IRepository<User> users)
+        public UserService(IRepository<User> users, IRepository<Endorsement> endorsements)
         {
             this.users = users;
+            this.endorsements = endorsements;
         }
 
         public IQueryable<User> GetAll()
@@ -53,6 +55,35 @@
             return this.users.All().FirstOrDefault(x => x.Id == id);
         }
 
+        public void Update(User user)
+        {
+            this.users.Update(user);
+            this.users.SaveChanges();
+        }
+
+        public bool EndorseUser(string endorsedUserId, string endorsedById, int skillId)
+        {
+            var endorsedUser = this.users.All().FirstOrDefault(x => x.Id == endorsedUserId);
+            var endorsedBy = this.users.All().FirstOrDefault(x => x.Id == endorsedById);
+
+            var skill = endorsedUser.Skills.FirstOrDefault(x => x.Id == skillId);
+
+            var endorsement = new Endorsement {SkillId = skillId, EndorsedBy = endorsedBy};
+
+            endorsedUser.Updates.Add(new Update
+            {
+                Content =
+                    string.Format("{0} {1} endorsed {2} {3} for their {4} skill.", endorsedBy.FirstName,
+                        endorsedBy.LastName, endorsedUser.FirstName, endorsedUser.LastName, skill.Name)
+            });
+
+            endorsedUser.Endorsements.Add(endorsement);
+
+            this.users.Update(endorsedUser);
+            this.users.SaveChanges();
+
+            return true;
+        }
 
         public void ChangeProfilePhotoUrl(string id, string url)
         {
