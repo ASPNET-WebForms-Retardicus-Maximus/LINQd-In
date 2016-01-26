@@ -15,6 +15,8 @@
 
         User GetById(string id);
 
+        void ChangeProfilePhotoUrl(string id, string url);
+
         void Update(User user);
 
         bool EndorseUser(string endorsedUserId, string endorsedById, int skillId);
