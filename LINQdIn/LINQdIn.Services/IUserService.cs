@@ -1,7 +1,9 @@
 ﻿namespace LINQdIn.Services
 {
+    using System.Collections.Generic;
     using System.Linq;
     using Models;
+    using ViewModels;
 
     public interface IUserService
     {
@@ -20,5 +22,11 @@
         bool EndorseUser(string endorsedUserId, string endorsedById, int skillId);
 
         void ChangeProfilePhotoUrl(string id, string url);
+
+        bool AddConnection(string user1, string user2);
+
+        bool AreConnected(string user1, string user2);
+
+        List<ConnectionViewModel> GetConnections(string ofUserId);
     }
 }

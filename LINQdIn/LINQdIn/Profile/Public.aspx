@@ -1,9 +1,9 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../Site.Master" CodeBehind="Public.aspx.cs" Inherits="LINQdIn.Profile.Public" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <asp:FormView runat="server" ID="UserFormView" ItemType="LINQdIn.Models.User" SelectMethod="Select" CssClass="">
+    <asp:FormView runat="server" ID="UserFormView" ItemType="LINQdIn.Models.User" SelectMethod="Select" CssClass="" OnItemCreated="UserFormView_ItemCreated">
         <ItemTemplate>
-            <div class="panel panel-primary" style="-moz-min-width: 450px; -ms-min-width: 450px; -o-min-width: 450px; -webkit-min-width: 450px; min-width: 450px">
+            <div class="panel panel-primary" style="-moz-min-width: 450px; -ms-min-width: 450px; -o-min-width: 450px; -webkit-min-width: 450px; min-width: 450px; width: 600px">
                 <div class="panel-heading">
                     <h2 class="text-center"><i><%#: Item.FirstName %> <%#: Item.LastName %> </i></h2>
                 </div>
@@ -54,7 +54,7 @@
                                     <tr>
                                         <td><%# Item.Name %></td>
                                         <td>
-                                                <asp:Button runat="server" OnCommand="OnCommand" CommandArgument="<%# Item.Id %>" Text='Endorse!' CssClass="btn btn-sm btn-primary"/>
+                                            <asp:Button runat="server" OnCommand="OnCommand" CommandArgument="<%# Item.Id %>" Text='Endorse!' CssClass="btn btn-sm btn-primary" />
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -77,8 +77,10 @@
                                         <tr>
                                             <td><%# Item.Skill.Name %></td>
                                             <td>
-                                                <p>by 
-                                                <a href="/Profile/Public?userId=<%# Item.EndorsedById %>" class="btn btn-sm btn-default">&nbsp;<%# string.Format("{0} {1}", Item.EndorsedBy.FirstName, Item.EndorsedBy.LastName) %></a></p>
+                                                <p>
+                                                    by 
+                                                <a href="/Profile/Public?userId=<%# Item.EndorsedById %>" class="btn btn-sm btn-info">&nbsp;<%# string.Format("{0} {1}", Item.EndorsedBy.FirstName, Item.EndorsedBy.LastName) %></a>
+                                                </p>
                                             </td>
                                         </tr>
                                     </ItemTemplate>
@@ -94,11 +96,28 @@
                     </div>
                     <div class="form-group">
                         Connections:
+                        <div>
+                            <asp:Repeater runat="server" ItemType="LINQdIn.ViewModels.ConnectionViewModel" SelectMethod="SelectConnections">
+                                <ItemTemplate>
+                                    <div class="row">
+                                        <div class="col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2">
+                                            <a href="/Profile/Public?userId=<%# Item.UserId1 %>">
+                                                <img src="<%# Item.UserPhoto1.Replace("~", "..") %>" alt="user" height="50" width="50" style="-ms-border-radius: 300px; border-radius: 300px" />
+                                            </a>
+                                        </div>
+                                        <div class="col-md-8 col-lg-8" style="line-height: 3">
+                                            <a href="/Profile/Public?userId=<%# Item.UserId1 %>"><%# Item.UserNames1 %></a>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </ItemTemplate>
+                            </asp:Repeater>
+                        </div>
                     </div>
                 </div>
 
                 <div>
-                    <a href="/#" class="btn btn-block btn-success">Add connection!</a>
+                    <asp:Button ID="AddConnectionBtn" runat="server" OnCommand="OnAddConnectionCommand" CommandArgument="<%# Item.Id %>" Text='Add connection!' CssClass="btn btn-block btn-success" Visible="False" />
                 </div>
             </div>
         </ItemTemplate>

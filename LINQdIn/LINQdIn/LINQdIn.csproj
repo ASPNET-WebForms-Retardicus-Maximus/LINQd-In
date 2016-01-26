@@ -547,8 +547,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Admin\" />
     <Folder Include="App_Data\" />
     <Folder Include="CustomControls\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LINQdIn.Data\LINQdIn.Data.csproj">
@@ -562,6 +564,10 @@
     <ProjectReference Include="..\LINQdIn.Services\LINQdIn.Services.csproj">
       <Project>{f13e6765-7670-46bb-ae4e-56864c4e549b}</Project>
       <Name>LINQdIn.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LINQdIn.ViewModels\LINQdIn.ViewModels.csproj">
+      <Project>{de7ce07a-4dfc-4150-bd84-3cf70dd2b689}</Project>
+      <Name>LINQdIn.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

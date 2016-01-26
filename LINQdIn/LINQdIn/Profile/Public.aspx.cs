@@ -9,6 +9,7 @@
     using Models;
     using Ninject;
     using Services;
+    using ViewModels;
 
     public partial class Public : Page
     {
@@ -19,7 +20,6 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         public User Select()
@@ -76,6 +76,64 @@
 
                 Server.TransferRequest(url);
             }
+        }
+
+        protected void OnAddConnectionCommand(object sender, CommandEventArgs e)
+        {
+            var argument = e.CommandArgument.ToString();
+
+            var currentUserId = User.Identity.GetUserId();
+
+            if (currentUserId == argument)
+            {
+                Response.Redirect("~/Profile/Private");
+            }
+
+            UserService.AddConnection(argument, currentUserId);
+
+            var url = Request.Url.PathAndQuery;
+
+            Server.TransferRequest(url);
+        }
+
+        protected void UserFormView_ItemCreated(object sender, EventArgs e)
+        {
+            var control = UserFormView.Row.FindControl("AddConnectionBtn") as Button;
+
+            if (control != null)
+            {
+                var targetUser = this.Request.QueryString["userId"];
+
+                var currentUserId = User.Identity.GetUserId();
+
+                if (targetUser != currentUserId)
+                {
+                    control.Visible = true;
+                }
+
+                if (targetUser == currentUserId)
+                {
+                    return;
+                }
+
+                if (!UserService.AreConnected(targetUser, currentUserId))
+                {
+                    control.Visible = true;
+                }
+                else
+                {
+                    control.Visible = false;
+                }
+            }
+        }
+
+        public IEnumerable<ConnectionViewModel> SelectConnections()
+        {
+            var targetUser = this.Request.QueryString["userId"];
+
+            var targetUserConnections = UserService.GetConnections(targetUser);
+
+            return targetUserConnections;
         }
     }
 }
