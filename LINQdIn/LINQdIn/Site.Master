@@ -1,5 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="LINQdIn.SiteMaster" %>
 
+<%@ Register Src="~/CustomControls/ErrorSuccessNotifier/ErrorSuccessNotifier.ascx" TagPrefix="userControl" TagName="ErrorSuccessNotifier" %>
+
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -115,6 +118,7 @@
             </div>
         </div>
         <div class="container container-fluid panel body-content" style="padding: 20px !important">
+            <userControl:ErrorSuccessNotifier runat="server" id="ErrorSuccessNotifier" />
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>

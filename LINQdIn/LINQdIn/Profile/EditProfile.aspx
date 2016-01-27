@@ -12,7 +12,6 @@
                     <asp:Button runat="server" ID="UploadButton" Text="Upload" OnClick="UploadButton_Click" />
                 </div>
             </div>
-            <asp:Label runat="server" ID="StatusLabel" Text="Upload status: " />
         </div>
         
         <asp:FormView runat="server"
