@@ -68,7 +68,7 @@
                                 <ContentTemplate>
                                     <ul class="nav navbar-nav navbar-right">
                                         <li class="dropdown">
-                                            
+
                                             <a runat="server" href="/#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span>&nbsp;Admin Stuff <b class="caret"></b></a>
                                             <ul class="dropdown-menu">
                                                 <li>
@@ -127,7 +127,29 @@
             </div>
         </div>
         <div class="container container-fluid panel body-content" style="padding: 20px !important">
-            <userControl:ErrorSuccessNotifier runat="server" id="ErrorSuccessNotifier" />
+            <div>
+                <asp:SiteMapPath
+                    ID="SiteMap1"
+                    runat="server"
+                    PathSeparator=" -/- "
+                    ParentLevelsDisplayed="1"
+                    PathDirection="RootToCurrent"
+                    RenderCurrentNodeAsLink="false"
+                    ShowToolTips="true"
+                    CssClass="breadcrumb sitemap">
+                    <NodeTemplate>
+                        <span>
+                            <asp:HyperLink
+                                ID="lnkPage"
+                                Text='<%#: Eval("Title") %>'
+                                NavigateUrl='<%#: Eval("Url") %>'
+                                ToolTip='<%#: Eval("Description") %>'
+                                runat="server" />
+                        </span>
+                    </NodeTemplate>
+                </asp:SiteMapPath>
+            </div>
+            <%--<userControl:ErrorSuccessNotifier runat="server" ID="ErrorSuccessNotifier" />--%>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>

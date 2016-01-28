@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LINQdIn {
+namespace LINQdIn.CustomControls.JoinUsControl {
     
     
-    public partial class SiteMaster {
+    public partial class JoinUs {
         
         /// <summary>
-        /// SiteMap1 control.
+        /// usersCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapPath SiteMap1;
-        
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl usersCount;
     }
 }

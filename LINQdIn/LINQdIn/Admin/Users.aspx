@@ -25,7 +25,7 @@
                     <asp:BoundField SortExpression="RegisteredOn" HeaderText="RegisteredOn" DataField="RegisteredOn" />
                     <asp:TemplateField HeaderText="Roles">
                         <ItemTemplate>
-                            <%# GetRoles(Item.Id) %>
+                            <%#: GetRoles(Item.Id) %>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info btn-raised" />
@@ -60,7 +60,7 @@
                     <asp:BoundField SortExpression="RegisteredOn" HeaderText="RegisteredOn" DataField="RegisteredOn" />
                     <asp:TemplateField HeaderText="Roles">
                         <ItemTemplate>
-                            <%# GetRoles(Item.Id) %>
+                            <%#: GetRoles(Item.Id) %>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info btn-raised" />
@@ -95,7 +95,7 @@
                     <asp:BoundField SortExpression="RegisteredOn" HeaderText="RegisteredOn" DataField="RegisteredOn" />
                     <asp:TemplateField HeaderText="Roles">
                         <ItemTemplate>
-                            <%# GetRoles(Item.Id) %>
+                            <%#: GetRoles(Item.Id) %>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info btn-raised" />

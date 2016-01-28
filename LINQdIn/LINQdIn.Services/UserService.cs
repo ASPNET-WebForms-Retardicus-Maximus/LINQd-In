@@ -115,7 +115,7 @@
 
             endorsedUser.Updates.Add(new Update
             {
-                Content =
+                ContentText = 
                     string.Format("{0} {1} endorsed {2} {3} for their {4} skill.", endorsedBy.FirstName,
                         endorsedBy.LastName, endorsedUser.FirstName, endorsedUser.LastName, skill.Name)
             });

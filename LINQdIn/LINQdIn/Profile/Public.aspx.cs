@@ -10,7 +10,7 @@
     using Ninject;
     using Services;
     using ViewModels;
-    using CustomControls.ErrorSuccessNotifier;
+    // using CustomControls.ErrorSuccessNotifier;
 
     public partial class Public : Page
     {
@@ -66,8 +66,8 @@
 
             if (currentUserId == targetUser)
             {
-                ErrorSuccessNotifier.ShowAfterRedirect = true;
-                ErrorSuccessNotifier.AddWarningMessage("You should not be trying to endorse yourself.. begone :(");
+                // ErrorSuccessNotifier.ShowAfterRedirect = true;
+                // ErrorSuccessNotifier.AddWarningMessage("You should not be trying to endorse yourself.. begone :(");
                 return;
             }
 
@@ -77,7 +77,7 @@
             {
                 var url = Request.Url.PathAndQuery;
 
-                ErrorSuccessNotifier.AddInfoMessage("You endorsed the user!");
+                // ErrorSuccessNotifier.AddInfoMessage("You endorsed the user!");
 
                 Server.TransferRequest(url);
             }
@@ -98,7 +98,7 @@
 
             var url = Request.Url.PathAndQuery;
 
-            ErrorSuccessNotifier.AddInfoMessage("You successfully became friends with this user!");
+            // ErrorSuccessNotifier.AddInfoMessage("You successfully became friends with this user!");
 
             Server.TransferRequest(url);
         }
