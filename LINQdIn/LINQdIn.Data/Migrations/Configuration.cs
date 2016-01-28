@@ -44,6 +44,71 @@ namespace LINQdIn.Data.Migrations
                 };
 
                 userManager.Create(admin, "123456qwerty");
+                userManager.AddToRole(admin.Id, "Regular");
+            }
+
+            if (userManager.Users.FirstOrDefault(x => x.Email == "niki@kostov.com") == null)
+            {
+                var user = new User
+                {
+                    Email="niki@kostov.com",
+                    UserName = "niki@kostov.com",
+                    FirstName = "Nikolay",
+                    LastName = "Kostov",
+                    ProfilePhotoUrl = "~/UploadedFiles/ProfileImages/avatar-placeholder.jpg",
+                    RegisteredOn = DateTime.Now
+                };
+
+                userManager.Create(user, "123456");
+                userManager.AddToRole(user.Id, "Regular");
+            }
+
+            if (userManager.Users.FirstOrDefault(x => x.Email == "ivaylo@kenov.com") == null)
+            {
+                var user = new User
+                {
+                    Email = "ivaylo@kenov.com",
+                    UserName = "ivaylo@kenov.com",
+                    FirstName = "Ivaylo",
+                    LastName = "Kenov",
+                    ProfilePhotoUrl = "~/UploadedFiles/ProfileImages/avatar-placeholder.jpg",
+                    RegisteredOn = DateTime.Now
+                };
+
+                userManager.Create(user, "123456");
+                userManager.AddToRole(user.Id, "Regular");
+            }
+
+            if (userManager.Users.FirstOrDefault(x => x.Email == "kon@simeonov.com") == null)
+            {
+                var user = new User
+                {
+                    Email = "kon@simeonov.com",
+                    UserName = "kon@simeonov.com",
+                    FirstName = "Konstantin",
+                    LastName = "Simeonov",
+                    ProfilePhotoUrl = "~/UploadedFiles/ProfileImages/avatar-placeholder.jpg",
+                    RegisteredOn = DateTime.Now
+                };
+
+                userManager.Create(user, "123456");
+                userManager.AddToRoles(user.Id, "Regular", "Admin");
+            }
+
+            if (userManager.Users.FirstOrDefault(x => x.Email == "nicky94@gmail.com") == null)
+            {
+                var user = new User
+                {
+                    Email = "nicky94@gmail.com",
+                    UserName = "nicky94@gmail.com",
+                    FirstName = "Niki",
+                    LastName = "Novkirishki",
+                    ProfilePhotoUrl = "~/UploadedFiles/ProfileImages/avatar-placeholder.jpg",
+                    RegisteredOn = DateTime.Now
+                };
+
+                userManager.Create(user, "123456");
+                userManager.AddToRole(user.Id, "Regular");
             }
 
             adminUser = userManager.Users.FirstOrDefault(x => x.Email == "admin@gmail.com");
@@ -102,6 +167,19 @@ namespace LINQdIn.Data.Migrations
 
                 context.Skills.Take(5).ToList().ForEach(x => adminUser.Skills.Add(x));
 
+                var allUsers = context.Users.AsQueryable();
+                var rng = new Random();
+
+                foreach (var user in allUsers)
+                {
+                    if (user.Skills.Count() < 2)
+                    {
+                        var count = rng.Next(3, 17);
+                        context.Skills.OrderBy(x => Guid.NewGuid()).Take(count).ToList().ForEach(s => user.Skills.Add(s)); 
+                        context.Users.AddOrUpdate(user);
+                    }
+                }
+                
                 context.SaveChanges();
             }
         }

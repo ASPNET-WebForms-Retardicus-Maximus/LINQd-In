@@ -14,6 +14,6 @@
         [ForeignKey("UserId")]
         public virtual User OfUser { get; set; }
 
-        public string Content { get; set; }
+        public string ContentText { get; set; }
     }
 }

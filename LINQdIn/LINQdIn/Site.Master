@@ -149,7 +149,7 @@
                     </NodeTemplate>
                 </asp:SiteMapPath>
             </div>
-            <userControl:ErrorSuccessNotifier runat="server" ID="ErrorSuccessNotifier" />
+            <%--<userControl:ErrorSuccessNotifier runat="server" ID="ErrorSuccessNotifier" />--%>
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>

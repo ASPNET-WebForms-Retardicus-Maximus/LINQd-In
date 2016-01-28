@@ -43,6 +43,11 @@ namespace LINQdIn.CustomControls.ErrorSuccessNotifier
         {
             get
             {
+                if (HttpContext.Current.Session == null)
+                {
+                    return false;
+                }
+
                 object showAfterRedirect =
                     HttpContext.Current.Session[KEY_SHOW_AFTER_REDIRECT];
                 return (showAfterRedirect != null);

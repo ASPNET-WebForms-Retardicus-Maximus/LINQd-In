@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-namespace LINQdIn
+﻿namespace LINQdIn
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Web.UI;
+    using Data;
     using Ninject;
     using Services;
+    using ViewModels;
 
     public partial class _Default : Page
     {

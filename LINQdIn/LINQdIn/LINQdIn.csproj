@@ -196,6 +196,7 @@
     <Content Include="CustomControls\ErrorSuccessNotifier\Scripts\jquery-1.3.2.js" />
     <Content Include="CustomControls\ErrorSuccessNotifier\Styles\ErrorSuccessNotifier.css" />
     <Content Include="CustomControls\JoinUsControl\JoinUs.ascx" />
+    <Content Include="CustomControls\TopUsers\TopUsers.ascx" />
     <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
     <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Children.ascx" />
@@ -399,6 +400,13 @@
     </Compile>
     <Compile Include="CustomControls\JoinUsControl\JoinUs.ascx.designer.cs">
       <DependentUpon>JoinUs.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControls\TopUsers\TopUsers.ascx.cs">
+      <DependentUpon>TopUsers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomControls\TopUsers\TopUsers.ascx.designer.cs">
+      <DependentUpon>TopUsers.ascx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
