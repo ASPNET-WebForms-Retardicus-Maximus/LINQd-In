@@ -9,6 +9,7 @@
     using System.Web.UI;
     using System.Web.UI.WebControls;
     using Models;
+    using LINQdIn.CustomControls.ErrorSuccessNotifier;
 
     public partial class EditProfile : Page
     {
@@ -17,7 +18,6 @@
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.StatusLabel.Visible = false;
         }
 
         // This is the Update method to update the selected User item
@@ -61,8 +61,6 @@
 
         protected void UploadButton_Click(object sender, EventArgs e)
         {
-            this.StatusLabel.Visible = true;
-
             if (ImageFileUpload.HasFile)
             {
                 try
@@ -85,21 +83,21 @@
 
                             ImageFileUpload.SaveAs(path);
                             UserService.ChangeProfilePhotoUrl(id, url);
-                            this.StatusLabel.Text = "Upload status: File uploaded!";
+                            ErrorSuccessNotifier.AddSuccessMessage("Upload status: File uploaded!");
                         }
                         else
                         {
-                            this.StatusLabel.Text = "Upload status: The file has to be less than 16 mb!";
+                            ErrorSuccessNotifier.AddErrorMessage("Upload status: The file has to be less than 16 mb!");
                         }
                     }
                     else
                     {
-                        this.StatusLabel.Text = "Upload status: Only JPEG files are accepted!";
+                        ErrorSuccessNotifier.AddErrorMessage("Upload status: Only JPEG files are accepted!");
                     }
                 }
                 catch (Exception ex)
                 {
-                    this.StatusLabel.Text = "Upload status: The file could not be uploaded. The following error occured: " + ex.Message;
+                    ErrorSuccessNotifier.AddErrorMessage("Upload status: The file could not be uploaded. The following error occured: " + ex.Message);
                 }
             }
         }

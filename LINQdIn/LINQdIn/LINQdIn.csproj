@@ -187,6 +187,14 @@
     <Content Include="Content\Images\bg-alt.jpg" />
     <Content Include="Content\Images\bg.jpg" />
     <Content Include="Content\Site.css" />
+    <Content Include="CustomControls\ErrorSuccessNotifier\ErrorSuccessNotifier.ascx" />
+    <Content Include="CustomControls\ErrorSuccessNotifier\Images\error-icon.png" />
+    <Content Include="CustomControls\ErrorSuccessNotifier\Images\info-icon.png" />
+    <Content Include="CustomControls\ErrorSuccessNotifier\Images\success-icon.png" />
+    <Content Include="CustomControls\ErrorSuccessNotifier\Images\warning-icon.png" />
+    <Content Include="CustomControls\ErrorSuccessNotifier\Scripts\ErrorSuccessNotifier.js" />
+    <Content Include="CustomControls\ErrorSuccessNotifier\Scripts\jquery-1.3.2.js" />
+    <Content Include="CustomControls\ErrorSuccessNotifier\Styles\ErrorSuccessNotifier.css" />
     <Content Include="DynamicData\FieldTemplates\Boolean.ascx" />
     <Content Include="DynamicData\FieldTemplates\Boolean_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\Children.ascx" />
@@ -367,6 +375,13 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="CustomControls\ErrorSuccessNotifier\ErrorSuccessNotifier.ascx.cs">
+      <DependentUpon>ErrorSuccessNotifier.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomControls\ErrorSuccessNotifier\ErrorSuccessNotifier.ascx.designer.cs">
+      <DependentUpon>ErrorSuccessNotifier.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -558,7 +573,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="CustomControls\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
