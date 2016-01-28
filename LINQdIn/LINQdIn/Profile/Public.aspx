@@ -3,7 +3,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:FormView runat="server" ID="UserFormView" ItemType="LINQdIn.Models.User" SelectMethod="Select" CssClass="" OnItemCreated="UserFormView_ItemCreated">
         <ItemTemplate>
-            <div class="panel panel-primary" style="-moz-min-width: 450px; -ms-min-width: 450px; -o-min-width: 450px; -webkit-min-width: 450px; min-width: 450px; width: 600px">
+            <div class="panel panel-primary" style="-moz-min-width: 450px; -ms-min-width: 450px; -o-min-width: 450px; -webkit-min-width: 450px; min-width: 450px; width: 650px; max-width: 100%">
                 <div class="panel-heading">
                     <h2 class="text-center"><i><%#: Item.FirstName %> <%#: Item.LastName %> </i></h2>
                 </div>
@@ -43,6 +43,9 @@
                     </div>
                     <div class="form-group">
                         Portfolio: <a href="/<%# Item.Portfolio %>"><%# Item.Portfolio %></a>
+                    </div>
+                    <div class="form-group">
+                        Education:
                     </div>
                     <div class="form-group">
                         Skills: 
@@ -92,34 +95,34 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        Education:
-                    </div>
-                    <div class="form-group">
-                        Connections:
-                        <div>
-                            <asp:Repeater runat="server" ItemType="LINQdIn.ViewModels.ConnectionViewModel" SelectMethod="SelectConnections">
-                                <ItemTemplate>
-                                    <div class="row">
-                                        <div class="col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2">
-                                            <a href="/Profile/Public?userId=<%# Item.UserId1 %>">
-                                                <img src="<%# Item.UserPhoto1.Replace("~", "..") %>" alt="user" height="50" width="50" style="-ms-border-radius: 300px; border-radius: 300px" />
-                                            </a>
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                Connections: 
+                            </div>
+                            <div class="panel-body">
+                                <asp:Repeater runat="server" ItemType="LINQdIn.ViewModels.ConnectionViewModel" SelectMethod="SelectConnections">
+                                    <ItemTemplate>
+                                        <div class="row">
+                                            <div class="col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2">
+                                                <a href="/Profile/Public?userId=<%# Item.UserId1 %>">
+                                                    <img src="<%# Item.UserPhoto1.Replace("~", "..") %>" alt="user" height="50" width="50" style="-ms-border-radius: 300px; border-radius: 300px" />
+                                                </a>
+                                            </div>
+                                            <div class="col-md-8 col-lg-8" style="line-height: 3">
+                                                <a href="/Profile/Public?userId=<%# Item.UserId1 %>"><%# Item.UserNames1 %></a>
+                                            </div>
                                         </div>
-                                        <div class="col-md-8 col-lg-8" style="line-height: 3">
-                                            <a href="/Profile/Public?userId=<%# Item.UserId1 %>"><%# Item.UserNames1 %></a>
-                                        </div>
-                                    </div>
-                                    <hr />
-                                </ItemTemplate>
-                            </asp:Repeater>
+                                        <hr />
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div>
-                    <asp:Button ID="AddConnectionBtn" runat="server" OnCommand="OnAddConnectionCommand" CommandArgument="<%# Item.Id %>" Text='Add connection!' CssClass="btn btn-block btn-success" Visible="False" />
+                    <div>
+                        <asp:Button ID="AddConnectionBtn" runat="server" OnCommand="OnAddConnectionCommand" CommandArgument="<%# Item.Id %>" Text='Add connection!' CssClass="btn btn-block btn-success" Visible="False" />
+                    </div>
                 </div>
-            </div>
         </ItemTemplate>
     </asp:FormView>
 </asp:Content>
