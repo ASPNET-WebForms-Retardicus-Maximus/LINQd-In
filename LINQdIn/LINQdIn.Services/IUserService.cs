@@ -11,9 +11,13 @@
 
         IQueryable<User> GetAllNonAdmin();
 
+        IQueryable<User> GetAllAdmins();
+
         IQueryable<User> GetAllEmployers();
 
         IQueryable<User> GetAllNonEmployers();
+
+        string GetUserRoles(string id);
 
         User GetById(string id);
 

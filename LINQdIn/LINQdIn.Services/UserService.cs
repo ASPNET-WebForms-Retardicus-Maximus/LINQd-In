@@ -45,6 +45,15 @@
             return result;
         }
 
+        public IQueryable<User> GetAllAdmins()
+        {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+            var role = roleManager.FindByName("Admin");
+            var result = this.users.All().Where(x => x.Roles.Any(r => r.RoleId == role.Id));
+
+            return result;
+        }
+
         public IQueryable<User> GetAllNonEmployers()
         {
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
@@ -52,6 +61,34 @@
             var result = this.users.All().Where(x => x.Roles.All(r => r.RoleId != role.Id));
 
             return result;
+        }
+
+        public string GetUserRoles(string id)
+        {
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+            var user = this.users.All().FirstOrDefault(x => x.Id == id);
+            var regular = roleManager.FindByName("Regular");
+            var admin = roleManager.FindByName("Admin");
+            var employer = roleManager.FindByName("Employer");
+
+            var userRoles = "";
+
+            if(user.Roles.Any(x => x.RoleId == regular.Id))
+            {
+                userRoles += "Regular, ";
+            }
+
+            if (user.Roles.Any(x => x.RoleId == admin.Id))
+            {
+                userRoles += "Admin, ";
+            }
+
+            if (user.Roles.Any(x => x.RoleId == employer.Id))
+            {
+                userRoles += "Employer, ";
+            }
+
+            return userRoles.TrimEnd(',', ' ');
         }
 
         public User GetById(string id)
