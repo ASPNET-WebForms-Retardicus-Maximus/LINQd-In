@@ -10,12 +10,13 @@
                 ItemType="LINQdIn.Models.Skill"
                 SelectMethod="Select"
                 AllowPaging="true"
-                PageSize="5"
+                PageSize="10"
                 AllowSorting="true"
                 DataKeyNames="Id"
                 AutoGenerateColumns="false"
                 UpdateMethod="Update"
                 DeleteMethod="Delete"
+                CssClass="table table-hover table-striped table-responsive"
                 ID="gvSkills">
                 <Columns>
                     <asp:BoundField SortExpression="Id" HeaderText="Id" DataField="Id" />
