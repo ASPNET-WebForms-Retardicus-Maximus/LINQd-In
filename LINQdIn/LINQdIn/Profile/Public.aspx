@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="../Site.Master" CodeBehind="Public.aspx.cs" Inherits="LINQdIn.Profile.Public" %>
+﻿<%@ Page Language="C#" Title="User Profile" AutoEventWireup="true" MasterPageFile="../Site.Master" CodeBehind="Public.aspx.cs" Inherits="LINQdIn.Profile.Public" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <asp:FormView runat="server" ID="UserFormView" ItemType="LINQdIn.Models.User" SelectMethod="Select" CssClass="" OnItemCreated="UserFormView_ItemCreated">

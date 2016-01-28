@@ -10,33 +10,33 @@
 namespace LINQdIn.Admin {
     
     
-    public partial class Skills {
+    public partial class Users {
         
         /// <summary>
-        /// gvSkills control.
+        /// gvUsers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView gvSkills;
+        protected global::System.Web.UI.WebControls.GridView gvUsers;
         
         /// <summary>
-        /// newSkill control.
+        /// gvEmployers control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox newSkill;
+        protected global::System.Web.UI.WebControls.GridView gvEmployers;
         
         /// <summary>
-        /// BtnAdd control.
+        /// gvAdmins control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnAdd;
+        protected global::System.Web.UI.WebControls.GridView gvAdmins;
     }
 }

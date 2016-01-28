@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" MasterPageFile="~/Admin/Default.master" CodeBehind="Skills.aspx.cs" Inherits="LINQdIn.Admin.Skills" %>
+﻿<%@ Page Language="C#" Title="Manage Skills" AutoEventWireup="true" MasterPageFile="~/Admin/Default.master" CodeBehind="Skills.aspx.cs" Inherits="LINQdIn.Admin.Skills" %>
 
 <asp:Content runat="server" ContentPlaceHolderID="admincontent">
     <div class="panel panel-info">
@@ -18,11 +18,24 @@
                 DeleteMethod="Delete"
                 ID="gvSkills">
                 <Columns>
+                    <asp:BoundField SortExpression="Id" HeaderText="Id" DataField="Id" />
                     <asp:BoundField SortExpression="Name" HeaderText="Name" DataField="Name" />
                     <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info btn-raised" />
                     <asp:CommandField ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger btn-raised" />
                 </Columns>
             </asp:GridView>
+            <div class="text-center">
+                <asp:UpdatePanel runat="server" >
+                    <ContentTemplate>
+                        <h4>Add skill:</h4>
+                        <p> Skill name: <asp:TextBox runat="server" ID="newSkill"/></p>
+                        <asp:Button Text="Add" runat="server" ID="BtnAdd" OnClick="OnClick"/>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger runat="server" ControlID="BtnAdd" EventName="Click"/>
+                    </Triggers>
+                </asp:UpdatePanel>
+            </div>
         </div>
     </div>
 </asp:Content>
