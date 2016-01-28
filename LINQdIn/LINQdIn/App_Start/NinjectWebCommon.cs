@@ -68,6 +68,8 @@ namespace LINQdIn.App_Start
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
 
             kernel.Bind(typeof (IUserService)).To(typeof (UserService));
+
+            kernel.Bind(typeof(ISkillsService)).To(typeof(SkillsService));
         }        
     }
 }
