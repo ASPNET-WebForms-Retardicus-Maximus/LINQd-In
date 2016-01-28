@@ -9,11 +9,12 @@
             <asp:GridView runat="server"
                 ItemType="LINQdIn.Models.User"
                 AllowPaging="true"
-                PageSize="10"
+                PageSize="5"
                 AllowSorting="true"
                 SelectMethod="Select"
                 DataKeyNames="Id"
                 AutoGenerateColumns="false"
+                CssClass="table table-hover table-striped table-responsive"
                 ID="gvUsers"
                 OnRowDataBound="gvUsers_OnRowDataBound">
                 <Columns>
@@ -44,11 +45,12 @@
             <asp:GridView runat="server"
                 ItemType="LINQdIn.Models.User"
                 AllowPaging="true"
-                PageSize="10"
+                PageSize="5"
                 AllowSorting="true"
                 SelectMethod="SelectEmployers"
                 DataKeyNames="Id"
                 AutoGenerateColumns="false"
+                CssClass="table table-hover table-striped table-responsive"
                 ID="gvEmployers">
                 <Columns>
                     <asp:BoundField SortExpression="Email" HeaderText="Email" DataField="Email" />
@@ -78,12 +80,13 @@
             <asp:GridView runat="server"
                 ItemType="LINQdIn.Models.User"
                 AllowPaging="true"
-                PageSize="10"
+                PageSize="5"
                 AllowSorting="true"
                 SelectMethod="SelectAdmins"
                 DataKeyNames="Id"
                 AutoGenerateColumns="false"
-                ID="gvAdmins">
+                ID="gvAdmins"
+                CssClass="table table-hover table-striped table-responsive">
                 <Columns>
                     <asp:BoundField SortExpression="Email" HeaderText="Email" DataField="Email" />
                     <asp:BoundField SortExpression="FirstName" HeaderText="FirstName" DataField="FirstName" />

@@ -3,9 +3,9 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-        <p><a href="http://www.asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+        <h1>LINQdIn</h1>
+        <p class="lead">LINQd in is the place where skilled people can seek their future employers or other like-minded people... or the other way around. You name it!</p>
+        <p><a href="/Account/Login.aspx" class="btn btn-primary btn-lg">Get started now! &raquo;</a></p>
     </div>
 
     <div class="row">

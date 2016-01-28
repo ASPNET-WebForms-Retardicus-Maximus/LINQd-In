@@ -134,7 +134,7 @@
         <div class="text-center">
             <hr />
             <footer class="text-center">
-                <p class="text-primary">&copy; LINQdIn - Connecting Programmers</p>
+                <p>&copy; LINQdIn - Connecting Programmers</p>
             </footer>
         </div>
         <script>
