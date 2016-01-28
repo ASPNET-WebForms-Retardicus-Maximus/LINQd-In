@@ -45,5 +45,23 @@
 
             ErrorSuccessNotifier.AddInfoMessage("You successfully removed entry: " + skill.Name);
         }
+
+        protected void OnClick(object sender, EventArgs e)
+        {
+            var text = this.newSkill.Text;
+
+            if (text.Length == 0)
+            {
+                ErrorSuccessNotifier.AddErrorMessage("You cannot add a skill without a name!");
+                return;
+            }
+
+            this.Service.Add(new Skill {Name = text});
+            this.newSkill.Text = "";
+
+            ErrorSuccessNotifier.ShowAfterRedirect = false;
+            ErrorSuccessNotifier.AddSuccessMessage("Successfully added a new skill to the db!");
+            ErrorSuccessNotifier.ShowAfterRedirect = true;
+        }
     }
 }

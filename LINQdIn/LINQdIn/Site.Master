@@ -67,8 +67,17 @@
                             <asp:RoleGroup Roles="Admin">
                                 <ContentTemplate>
                                     <ul class="nav navbar-nav navbar-right">
-                                        <li>
-                                            <a runat="server" href="~/Admin/Manage"><span class="glyphicon glyphicon-wrench"></span>&nbsp;Admin Stuff</a>
+                                        <li class="dropdown">
+                                            
+                                            <a runat="server" href="/#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-wrench"></span>&nbsp;Admin Stuff <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a runat="server" href="~/Admin/Skills" title="Manage skills">Manage Skills</a>
+                                                </li>
+                                                <li>
+                                                    <a runat="server" href="~/Admin/Users" title="Manage users">Manage Users</a>
+                                                </li>
+                                            </ul>
                                         </li>
                                         <li class="dropdown">
                                             <a href="/#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i>&nbsp;<%: Context.User.Identity.Name  %> <b class="caret"></b></a>
