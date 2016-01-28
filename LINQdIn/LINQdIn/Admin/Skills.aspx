@@ -19,8 +19,8 @@
                 ID="gvSkills">
                 <Columns>
                     <asp:BoundField SortExpression="Name" HeaderText="Name" DataField="Name" />
-                    <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info" />
-                    <asp:CommandField ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger" />
+                    <asp:CommandField ShowEditButton="true" ControlStyle-CssClass="btn btn-info btn-raised" />
+                    <asp:CommandField ShowDeleteButton="true" ControlStyle-CssClass="btn btn-danger btn-raised" />
                 </Columns>
             </asp:GridView>
         </div>

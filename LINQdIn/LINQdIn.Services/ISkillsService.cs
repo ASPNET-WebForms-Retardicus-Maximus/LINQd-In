@@ -11,6 +11,6 @@
 
         IQueryable<Skill> Add(Skill skill);
 
-        IQueryable<Skill> Delete(int id);
+        Skill Delete(int id);
     }
 }
