@@ -31,6 +31,10 @@
 
         bool AreConnected(string user1, string user2);
 
+        bool AddSkill(string userId, int skillId);
+
+        bool RemoveSkill(string userId, int skillId);
+
         List<ConnectionViewModel> GetConnections(string ofUserId);
     }
 }

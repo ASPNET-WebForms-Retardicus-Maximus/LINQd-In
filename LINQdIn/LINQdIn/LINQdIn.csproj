@@ -227,6 +227,7 @@
     <Content Include="Content\bootstrap-theme\materialize\css\ripples.min.css.map" />
     <Content Include="Profile\Connections.aspx" />
     <Content Include="Profile\EditProfile.aspx" />
+    <Content Include="Profile\ManageSkills.aspx" />
     <Content Include="Profile\Private.aspx" />
     <Content Include="Profile\Public.aspx" />
     <Content Include="Scripts\bootstrap-theme\materialize\js\material.min.js.map" />
@@ -548,6 +549,13 @@
     </Compile>
     <Compile Include="Profile\EditProfile.aspx.designer.cs">
       <DependentUpon>EditProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\ManageSkills.aspx.cs">
+      <DependentUpon>ManageSkills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\ManageSkills.aspx.designer.cs">
+      <DependentUpon>ManageSkills.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile\Private.aspx.cs">
       <DependentUpon>Private.aspx</DependentUpon>

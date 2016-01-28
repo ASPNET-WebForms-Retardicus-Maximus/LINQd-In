@@ -68,7 +68,7 @@
       <Name>LINQdIn.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\LINQdIn.ViewModels\LINQdIn.ViewModels.csproj">
-      <Project>{DE7CE07A-4DFC-4150-BD84-3CF70DD2B689}</Project>
+      <Project>{de7ce07a-4dfc-4150-bd84-3cf70dd2b689}</Project>
       <Name>LINQdIn.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>

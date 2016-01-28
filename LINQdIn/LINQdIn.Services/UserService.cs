@@ -14,12 +14,14 @@
         private readonly IRepository<User> users;
         private readonly IRepository<Endorsement> endorsements;
         private readonly IRepository<Connection> connections;
+        private readonly IRepository<Skill> skills;
 
-        public UserService(IRepository<User> users, IRepository<Endorsement> endorsements, IRepository<Connection> connections)
+        public UserService(IRepository<User> users, IRepository<Endorsement> endorsements, IRepository<Connection> connections, IRepository<Skill> skills)
         {
             this.users = users;
             this.endorsements = endorsements;
             this.connections = connections;
+            this.skills = skills;
         }
 
         public IQueryable<User> GetAll()
@@ -73,7 +75,7 @@
 
             var userRoles = "";
 
-            if(user.Roles.Any(x => x.RoleId == regular.Id))
+            if (user.Roles.Any(x => x.RoleId == regular.Id))
             {
                 userRoles += "Regular, ";
             }
@@ -171,10 +173,29 @@
 
                 var otherUser = users.All().FirstOrDefault(u => u.Id == otherUserId);
 
-                result.Add(new ConnectionViewModel { UserId1 = otherUser.Id, UserNames1 = string.Format("{0} {1}", otherUser.FirstName, otherUser.LastName), UserPhoto1 = otherUser.ProfilePhotoUrl});
+                result.Add(new ConnectionViewModel { UserId1 = otherUser.Id, UserNames1 = string.Format("{0} {1}", otherUser.FirstName, otherUser.LastName), UserPhoto1 = otherUser.ProfilePhotoUrl });
             }
 
             return result;
+        }
+
+        public bool AddSkill(string userId, int skillId)
+        {
+            var skill = this.skills.GetById(skillId);
+            this.skills.Detach(skill);
+            this.GetById(userId).Skills.Add(skill);
+            this.users.SaveChanges();
+            return true;
+        }
+
+        public bool RemoveSkill(string userId, int skillId)
+        {
+            var skill = this.skills.GetById(skillId);
+            var user = this.GetById(userId);
+            user.Skills.Remove(skill);
+            this.users.Update(user);
+            this.users.SaveChanges();
+            return true;
         }
     }
 }
