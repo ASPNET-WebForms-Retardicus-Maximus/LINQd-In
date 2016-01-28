@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="~/" title="LINQdIn"  description="The home of many like-minded software engineering-oriented people and great minds!">
+      <siteMapNode url="~/Admin" title="Admin Panel"  description="Admin panel" >
+        <siteMapNode url="~/Admin/Skills" title="Manage skills" description=""/>
+        <siteMapNode url="~/Admin/Users" title="Manage users" description=""/>
+      </siteMapNode>
+      <siteMapNode url="~/Account/Login" title="Login" />
+      <siteMapNode url="~/Account/Register" title="Register" />
+      <siteMapNode url="~/Profile" title="Profile"  description="">
+        <siteMapNode url="~/Profile/Public" title="User Profile"/>
+        <siteMapNode url="~/Profile/Private" title="Private Profile"/>
+        <siteMapNode url="~/Profile/EditProfile" title="Edit Profile" />
+      </siteMapNode>
+      <siteMapNode url="~/SearchUsers" title="Browse Users"/>
+    </siteMapNode>
+</siteMap>

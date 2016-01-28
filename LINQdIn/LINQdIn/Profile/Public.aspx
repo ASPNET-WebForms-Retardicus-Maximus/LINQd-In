@@ -8,41 +8,41 @@
                     <h2 class="text-center"><i><%#: Item.FirstName %> <%#: Item.LastName %> </i></h2>
                 </div>
                 <div class="text-center" style="padding-top: 10px">
-                    <img src="<%# Item.ProfilePhotoUrl %>" alt="<%# Item.FirstName %>" width="300" height="300" runat="server" style="-ms-border-radius: 300px; border-radius: 300px" />
+                    <img src="<%#: Item.ProfilePhotoUrl %>" alt="<%#: Item.FirstName %>" width="300" height="300" runat="server" style="-ms-border-radius: 300px; border-radius: 300px" />
                 </div>
                 <div class="text-center">
                     <div class="btn-group-sm">
-                        <a href="<%# Item.TwitterProfile %>" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-link">&nbsp;</i>Twitter</a>
-                        <a href="<%# Item.GithubProfile %>" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-link">&nbsp;</i>Github</a>
+                        <a href="<%#: Item.TwitterProfile %>" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-link">&nbsp;</i>Twitter</a>
+                        <a href="<%#: Item.GithubProfile %>" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-link">&nbsp;</i>Github</a>
                     </div>
                 </div>
                 <hr />
                 <div class="text-center">
                     Summary: 
-            <%# Item.Summary %>
+            <%#: Item.Summary %>
                 </div>
 
                 <div class="text-center">
                     <div class="form-group has-warning">
                         <label class="col-lg-4 col-md-4 control-label">&nbsp;Email:</label>
                         <div class="col-lg-8 col-md-8">
-                            <label><%# Item.Email %></label>
+                            <label><%#: Item.Email %></label>
                         </div>
                     </div>
                     <div class="form-group has-success">
                         <label class="col-lg-4 col-md-4 control-label"><span class="glyphicon glyphicon-pencil"></span>&nbsp;First Name:</label>
                         <div class="col-lg-8 col-md-8">
-                            <label><%# Item.FirstName %></label>
+                            <label><%#: Item.FirstName %></label>
                         </div>
                     </div>
                     <div class="form-group has-success">
                         <label class="col-lg-4 col-md-4 control-label"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Last Name:</label>
                         <div class="col-lg-8 col-md-8">
-                            <label><%# Item.LastName %></label>
+                            <label><%#: Item.LastName %></label>
                         </div>
                     </div>
                     <div class="form-group">
-                        Portfolio: <a href="/<%# Item.Portfolio %>"><%# Item.Portfolio %></a>
+                        Portfolio: <a href="/<%#: Item.Portfolio %>"><%#: Item.Portfolio %></a>
                     </div>
                     <div class="form-group">
                         Education:
@@ -55,9 +55,9 @@
                                 </HeaderTemplate>
                                 <ItemTemplate>
                                     <tr>
-                                        <td><%# Item.Name %></td>
+                                        <td><%#: Item.Name %></td>
                                         <td>
-                                            <asp:Button runat="server" OnCommand="OnCommand" CommandArgument="<%# Item.Id %>" Text='Endorse!' CssClass="btn btn-sm btn-primary" />
+                                            <asp:Button runat="server" OnCommand="OnCommand" CommandArgument="<%#: Item.Id %>" Text='Endorse!' CssClass="btn btn-sm btn-primary" />
                                         </td>
                                     </tr>
                                 </ItemTemplate>
@@ -78,11 +78,11 @@
                                     </HeaderTemplate>
                                     <ItemTemplate>
                                         <tr>
-                                            <td><%# Item.Skill.Name %></td>
+                                            <td><%#: Item.Skill.Name %></td>
                                             <td>
                                                 <p>
                                                     by 
-                                                <a href="/Profile/Public?userId=<%# Item.EndorsedById %>" class="btn btn-sm btn-info">&nbsp;<%# string.Format("{0} {1}", Item.EndorsedBy.FirstName, Item.EndorsedBy.LastName) %></a>
+                                                <a href="/Profile/Public?userId=<%#: Item.EndorsedById %>" class="btn btn-sm btn-info">&nbsp;<%#: string.Format("{0} {1}", Item.EndorsedBy.FirstName, Item.EndorsedBy.LastName) %></a>
                                                 </p>
                                             </td>
                                         </tr>
@@ -104,12 +104,12 @@
                                     <ItemTemplate>
                                         <div class="row">
                                             <div class="col-md-2 col-lg-2 col-md-offset-2 col-lg-offset-2">
-                                                <a href="/Profile/Public?userId=<%# Item.UserId1 %>">
-                                                    <img src="<%# Item.UserPhoto1.Replace("~", "..") %>" alt="user" height="50" width="50" style="-ms-border-radius: 300px; border-radius: 300px" />
+                                                <a href="/Profile/Public?userId=<%#: Item.UserId1 %>">
+                                                    <img src="<%#: Item.UserPhoto1.Replace("~", "..") %>" alt="user" height="50" width="50" style="-ms-border-radius: 300px; border-radius: 300px" />
                                                 </a>
                                             </div>
                                             <div class="col-md-8 col-lg-8" style="line-height: 3">
-                                                <a href="/Profile/Public?userId=<%# Item.UserId1 %>"><%# Item.UserNames1 %></a>
+                                                <a href="/Profile/Public?userId=<%#: Item.UserId1 %>"><%#: Item.UserNames1 %></a>
                                             </div>
                                         </div>
                                         <hr />
@@ -120,7 +120,7 @@
                     </div>
 
                     <div>
-                        <asp:Button ID="AddConnectionBtn" runat="server" OnCommand="OnAddConnectionCommand" CommandArgument="<%# Item.Id %>" Text='Add connection!' CssClass="btn btn-block btn-success" Visible="False" />
+                        <asp:Button ID="AddConnectionBtn" runat="server" OnCommand="OnAddConnectionCommand" CommandArgument="<%#: Item.Id %>" Text='Add connection!' CssClass="btn btn-block btn-success" Visible="False" />
                     </div>
                 </div>
         </ItemTemplate>

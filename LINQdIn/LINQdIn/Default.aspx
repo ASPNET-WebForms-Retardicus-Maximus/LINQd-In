@@ -2,11 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron">
-        <h1>LINQdIn</h1>
-        <p class="lead">LINQd in is the place where skilled people can seek their future employers or other like-minded people... or the other way around. You name it!</p>
-        <p><a href="/Account/Login.aspx" class="btn btn-primary btn-lg">Get started now! &raquo;</a></p>
-    </div>
+    <li:JoinUs runat="server"/>
 
     <div class="row">
         <div class="col-md-4">

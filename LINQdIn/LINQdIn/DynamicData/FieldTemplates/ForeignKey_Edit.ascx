@@ -6,9 +6,9 @@
 		<asp:DropDownList 
 			ID="DropDownList1"
 			SelectMethod="GetData"
-			DataTextField="<%#DataTextField%>"
-			DataValueField="<%#DataValueField%>"
-			SelectedValue="<%#FieldValueString%>"
+			DataTextField="<%#:DataTextField%>"
+			DataValueField="<%#:DataValueField%>"
+			SelectedValue="<%#:FieldValueString%>"
 			CssClass="form-control"
             AppendDataBoundItems="true"
 			Runat="server">
